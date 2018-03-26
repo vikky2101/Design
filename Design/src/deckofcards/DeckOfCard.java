@@ -30,7 +30,7 @@ public class DeckOfCard {
 		}
 
 		for (int i = 0; i < no_players; i++) {
-			players.add(new Player("Player" + i + 1));
+			players.add(new Player("PLAYER" + i + 1));
 		}
 
 	}
