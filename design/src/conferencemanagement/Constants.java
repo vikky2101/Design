@@ -1,28 +1,24 @@
 package conferencemanagement;
 
 
-/**
- * This class contains common constants
- */
-
 public class Constants {
- 
-	static final String minute = "min";
-	static final String lightning = "lightning";
-	static final int min_talkminute = 1;
-	static final int max_talkminute = 240;
-	static final int lightning_time = 5;
-	static final int hundred = 100;
-	static final int sixty = 60;
-	static final int nine = 9;
-	static final int twelve = 12;
-	static final int minNetworkingStartTime = 180;
-	static final int afternoonstartingtime = 1300;
-	static final int lunchtime = 1200;
-	static final int afternoonendtime = 1700;
-	static final int morningstartingtime = 900;
-	static final int morningendtime = 1200;
-	static final int minimin_network_starting_time = 1600;
-	
-	
+
+  public static final String MINUTE = "min";
+  public static final String LIGHTNING = "lightning";
+  public static final int MIN_TALKMINUTE = 1;
+  public static final int MAX_TALKMINUTE = 240;
+  public static final int LIGHTNING_TIME = 5;
+  public static final int HUNDRED = 100;
+  public static final int SIXTY = 60;
+  public static final int NINE = 9;
+  public static final int TWELVE = 12;
+  public static final int MIN_NETWORKING_START_TIME = 180;
+  public static final int AFTERNOONSTARTINGTIME = 1300;
+  public static final int LUNCHTIME = 1200;
+  public static final int AFTERNOONENDTIME = 1700;
+  public static final int MORNINGSTARTINGTIME = 900;
+  public static final int MORNINGENDTIME = 1200;
+  public static final int MINIMIN_NETWORK_STARTING_TIME = 1600;
+
+
 }

@@ -7,78 +7,78 @@ import java.util.List;
  */
 
 public abstract class Session {
-	protected int id;
-	protected int starttime;
-	protected int endtime;
-	protected int currendtime;
-	protected String type;
 
-	public Session() {
-	}
+  protected int id;
+  protected int startTime;
+  protected int endTime;
+  protected int currentTime;
+  protected String type;
 
-	public Session(SessionData session) {
-		this.id = session.getId();
-		this.type = session.getType();
-		this.starttime = session.getStarttime();
-		this.endtime = session.getEndtime();
-	}
+  public Session() {
+  }
 
-	public abstract int calculateEndTime();
+  public Session(SessionData session) {
+    this.id = session.getId();
+    this.type = session.getType();
+    this.startTime = session.getStartTime();
+    this.endTime = session.getEndTime();
+  }
 
-	public abstract void schedule(List<Talk> Talk);
+  public abstract int calculateEndTime();
 
-	public abstract void print(int preSessionEndTime);
+  public abstract void schedule(List<Talk> Talk);
 
-	/**
-	 * This fxn prints talk in proper readable format for TalkSession type
-	 * session such as morning or afternoon session.
-	 */
-	public String formatTalkSessionTime(int starttime) {
+  public abstract void print(int preSessionEndTime);
 
-		int diff = 0, hr = 0, min = 0;
-		String var = "AM";
-		if (starttime == Constants.morningstartingtime) {
-			return String.format("%02d:%02d %s ", Constants.nine, min, var);
+  /**
+   * This fxn prints talk in proper readable format for TalkSession type session such as morning or
+   * afternoon session.
+   */
+  public String formatTalkSessionTime(int starttime) {
 
-		} else if (starttime >= Constants.morningstartingtime
-				&& starttime <= Constants.morningendtime) {
-			diff = ((starttime - Constants.morningstartingtime));
-			hr = diff / Constants.sixty;
-			min = (diff - hr * Constants.sixty);
-			hr += Constants.nine;
-		} else if (starttime >= Constants.afternoonstartingtime
-				&& starttime <= Constants.afternoonendtime) {
-			diff = ((starttime - Constants.afternoonstartingtime));
-			hr = diff / Constants.sixty;
-			min = (diff - hr * Constants.sixty);
-			hr += Constants.min_talkminute;
-		}
-		if (starttime >= Constants.morningendtime) {
-			var = "PM";
-		} else {
-			var = "AM";
-		}
-		return String.format("%02d:%02d %s ", hr, min, var);
-	}
+    int diff = 0, hr = 0, min = 0;
+    String var = "AM";
+    if (starttime == Constants.MORNINGSTARTINGTIME) {
+      return String.format("%02d:%02d %s ", Constants.NINE, min, var);
 
-	/**
-	 * This fxn prints session format for IntervalSession type such as lunch or
-	 * networking.
-	 */
-	public String formatIntervalSessionTime(int starttime) {
+    } else if (starttime >= Constants.MORNINGSTARTINGTIME
+        && starttime <= Constants.MORNINGENDTIME) {
+      diff = ((starttime - Constants.MORNINGSTARTINGTIME));
+      hr = diff / Constants.SIXTY;
+      min = (diff - hr * Constants.SIXTY);
+      hr += Constants.NINE;
+    } else if (starttime >= Constants.AFTERNOONSTARTINGTIME
+        && starttime <= Constants.AFTERNOONENDTIME) {
+      diff = ((starttime - Constants.AFTERNOONSTARTINGTIME));
+      hr = diff / Constants.SIXTY;
+      min = (diff - hr * Constants.SIXTY);
+      hr += Constants.MIN_TALKMINUTE;
+    }
+    if (starttime >= Constants.MORNINGENDTIME) {
+      var = "PM";
+    } else {
+      var = "AM";
+    }
+    return String.format("%02d:%02d %s ", hr, min, var);
+  }
 
-		int diff = 0, hr = 0, min = 0;
-		String var = "PM";
-		if (starttime == Constants.morningendtime) {
-			hr = Constants.twelve;
-		} else if (starttime >= Constants.afternoonstartingtime
-				&& starttime <= Constants.afternoonendtime) {
-			diff = (starttime - Constants.afternoonstartingtime);
-			hr = diff / Constants.sixty;
-			min = (diff - hr * Constants.sixty);
-			hr += Constants.min_talkminute;
-		}
-		return String.format("%02d:%02d %s ", hr, min, var);
-	}
+  /**
+   * This fxn prints session format for IntervalSession type such as lunch or networking.
+   */
+  public String formatIntervalSessionTime(int starttime) {
+
+    int diff = 0, hr = 0, min = 0;
+    String var = "PM";
+    if (starttime == Constants.MORNINGENDTIME) {
+      hr = Constants.TWELVE;
+    } else if (starttime >= Constants.AFTERNOONSTARTINGTIME
+        && starttime <= Constants.AFTERNOONENDTIME) {
+      diff = (starttime - Constants.AFTERNOONSTARTINGTIME);
+      hr = diff / Constants.SIXTY;
+      min = (diff - hr * Constants.SIXTY);
+      hr += Constants.MIN_TALKMINUTE;
+    }
+    return String.format("%02d:%02d %s ", hr, min, var);
+  }
 
 }

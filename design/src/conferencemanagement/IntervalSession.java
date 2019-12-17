@@ -13,7 +13,7 @@ public class IntervalSession extends Session {
 
 	@Override
 	public int calculateEndTime() {
-		return this.endtime;
+		return this.endTime;
 	}
 
 	public IntervalSession(SessionData session) {
@@ -31,23 +31,23 @@ public class IntervalSession extends Session {
 	@Override
 	public void print(int prevSessionEndTime) {
 		if (prevSessionEndTime == 0) {
-			prevSessionEndTime = this.starttime;
+			prevSessionEndTime = this.startTime;
 		}
 		if ("lunch".equals(this.type)) {
-			int duration = ((this.endtime - this.starttime) / Constants.hundred)
-					* Constants.sixty;
-			System.out.println(formatIntervalSessionTime(this.starttime) + "Lunch "
-					+ duration + Constants.minute);
+			int duration = ((this.endTime - this.startTime) / Constants.HUNDRED)
+					* Constants.SIXTY;
+			System.out.println(formatIntervalSessionTime(this.startTime) + "Lunch "
+					+ duration + Constants.MINUTE);
 			return;
 		}
 		if ("networking".equals(this.type)) {
-			int minNetworkingStartTime = Constants.minNetworkingStartTime;
-			if (prevSessionEndTime - Constants.afternoonstartingtime > minNetworkingStartTime) {
+			int minNetworkingStartTime = Constants.MIN_NETWORKING_START_TIME;
+			if (prevSessionEndTime - Constants.AFTERNOONSTARTINGTIME > minNetworkingStartTime) {
 				System.out.println(formatIntervalSessionTime(prevSessionEndTime)
 						+ "Networking Event\n");
 			} else {
 				System.out
-						.println(formatIntervalSessionTime(Constants.minimin_network_starting_time)
+						.println(formatIntervalSessionTime(Constants.MINIMIN_NETWORK_STARTING_TIME)
 								+ "Networking Event\n");
 			}
 		}

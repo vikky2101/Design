@@ -82,8 +82,8 @@ public class SchedulerLogic {
 			}
 			// fetching time using matcher group
 			talktime = getTopicTime(matcher.group(3));
-			if (talktime >= Constants.min_talkminute
-					&& talktime <= Constants.max_talkminute) {
+			if (talktime >= Constants.MIN_TALKMINUTE
+					&& talktime <= Constants.MAX_TALKMINUTE) {
 				talklist.add(new Talk(matcher.group(1), talktime));
 			}
 		}
@@ -97,7 +97,7 @@ public class SchedulerLogic {
 		if (time.endsWith("min")) {
 			return Integer.parseInt(time.substring(0, time.indexOf("min")));
 		} else if (time.endsWith("lightning")) {
-			return Constants.lightning_time;
+			return Constants.LIGHTNING_TIME;
 		}
 		return 0;
 	}
