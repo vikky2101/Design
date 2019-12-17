@@ -5,16 +5,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Player {
-	String name;
-	ArrayList<Card> listOfCards;
-	
-	public Player(String name){
-		this.name = name;
-		listOfCards = new ArrayList<>();
-	}
-	
-	
-	
-	
+
+  String name;
+  List<Card> listOfCards;
+
+  public Player(String name) {
+    this.name = name;
+    listOfCards = new ArrayList<>();
+  }
 
 }
