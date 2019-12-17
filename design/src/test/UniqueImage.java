@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Arrays;
 
-class UniqueImages {
+class UniqueImage {
 
   public static class Image {
 
@@ -65,6 +65,6 @@ class UniqueImages {
         new Image("other.jpg", 40, 60),
         new Image("lenna.jpg", 512, 512)};
     Set<Image> set = new HashSet<>(Arrays.asList(images));
-    UniqueImages.printImages(set);
+    UniqueImage.printImages(set);
   }
 }
