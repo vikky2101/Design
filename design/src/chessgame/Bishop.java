@@ -4,7 +4,6 @@ public class Bishop extends Piece {
 
 	public Bishop(boolean isAvailable, boolean isBlack, int x, int y) {
 		super(isAvailable, isBlack, x, y);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

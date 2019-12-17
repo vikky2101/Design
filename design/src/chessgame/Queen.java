@@ -2,23 +2,24 @@ package chessgame;
 
 public class Queen extends Piece {
 
-	public Queen(boolean isAvailable, boolean isBlack, int x, int y) {
-		super(isAvailable, isBlack, x, y);
-		// TODO Auto-generated constructor stub
-	}
+  public Queen(boolean isAvailable, boolean isBlack, int x, int y) {
+    super(isAvailable, isBlack, x, y);
+  }
 
-	@Override
-	public boolean isValidMove(int fromX, int fromY, int toX, int toY) {
-		if (super.isValidMove(fromX, fromY, toX, toY) == false)
+  @Override
+  public boolean isValidMove(int fromX, int fromY, int toX, int toY) {
+		if (super.isValidMove(fromX, fromY, toX, toY) == false) {
 			return false;
-		if (toX == fromX)
+		}
+		if (toX == fromX) {
 			return true;
-		else if (toY == fromY)
+		} else if (toY == fromY) {
 			return true;
-		else if (toX - fromX == toY - fromY)
+		} else if (toX - fromX == toY - fromY) {
 			return true;
-		else
+		} else {
 			return false;
-	}
+		}
+  }
 
 }
