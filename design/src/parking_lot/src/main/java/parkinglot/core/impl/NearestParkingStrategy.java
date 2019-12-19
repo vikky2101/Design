@@ -1,5 +1,6 @@
 package parking_lot.src.main.java.parkinglot.core.impl;
 
+import java.util.Collections;
 import java.util.TreeSet;
 import parking_lot.src.main.java.parkinglot.core.IStrategy;
 
