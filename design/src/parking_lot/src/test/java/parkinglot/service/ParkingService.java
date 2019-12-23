@@ -3,13 +3,14 @@ package parking_lot.src.test.java.parkinglot.service;
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
-import parkinglot.core.IParkingManager;
-import parkinglot.core.IStrategy;
-import parkinglot.core.impl.CarParkingManager;
-import parkinglot.core.impl.NearestParkingStrategy;
-import parkinglot.exception.ParkingServiceException;
-import parkinglot.model.Car;
-import parkinglot.service.impl.ParkingServiceImpl;
+import parking_lot.src.main.java.parkinglot.core.IParkingManager;
+import parking_lot.src.main.java.parkinglot.core.IStrategy;
+import parking_lot.src.main.java.parkinglot.core.impl.CarParkingManager;
+import parking_lot.src.main.java.parkinglot.core.impl.NearestParkingStrategy;
+import parking_lot.src.main.java.parkinglot.exception.ParkingServiceException;
+import parking_lot.src.main.java.parkinglot.model.Car;
+import parking_lot.src.main.java.parkinglot.service.IParkingService;
+import parking_lot.src.main.java.parkinglot.service.impl.ParkingServiceImpl;
 
 public class ParkingService {
 
